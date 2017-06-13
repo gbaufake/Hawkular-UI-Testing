@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hawkular UI Testing</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "layouts/partials/navbar" %>
+    <%= render partial: "layouts/partials/flash_messages", flash: flash %> 
+
+      <div id="wrapper">
+        <div id="page-wrapper">
+          <%= yield %>
+        </div>
+      </div>
+  </body>
+</html>
