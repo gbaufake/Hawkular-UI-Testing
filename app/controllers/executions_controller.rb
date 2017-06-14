@@ -60,11 +60,11 @@ class ExecutionsController < ApplicationController
     def execute
     time = Benchmark.measure do
       response = @execution.perform_request
+      @execution.time_of_response = time.real
     end
-    response = @execution.perform_request
+    
     @execution.actual_response_code = response.code
     @execution.actual_response_body = response.body
-    @execution.time_of_response = time.real
     @execution.save
     end
 end
